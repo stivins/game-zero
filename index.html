@@ -5,9 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Крестики нолики</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        let table = document.querySelector('table') 
+        volume = 0 
+        let win = [ 
+            [0,1,2], 
+            [3,4,5], 
+            [6,7,8], 
+            [0,3,6], 
+            [2,4,6], 
+            [0,3,6], 
+            [1,4,7], 
+            [2,5,8], 
+            [0,4,8], 
+            [2,4,6], 
+        ] 
+        table.addEventListener('click', (event)=>{ 
+            let nul = event.target.closest('td') 
+        
+            for(let i=0; i<9; i++){ 
+                if(nul.textContent ==''){ 
+                    if(volume%2==0){ 
+                        nul.textContent = 'x' 
+                        volume+=1 
+                    }else{ 
+                        nul.textContent = 'o' 
+                        volume+=1 
+                    } 
+                } 
+        
+            }     
+        
+        })
+
+    </script>
 </body>
 </html>
